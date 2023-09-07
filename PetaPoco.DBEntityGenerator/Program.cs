@@ -7,7 +7,6 @@
     using Oracle.ManagedDataAccess.Client;
     using PetaPoco.DBEntityGenerator.Outputs;
     using System;
-    using System.Collections.Generic;
     using System.Data.Common;
     using System.Data.SqlClient;
     using System.IO;
@@ -51,6 +50,8 @@
                     ProviderName = opts.ProviderName,
                     ExplicitColumns = opts.ExplicitColumns,
                     TrackModifiedColumns = opts.TrackModifiedColumns,
+                    CleanTableNames = opts.CleanTableName,
+                    SingularizeTableNames = opts.SingularizeTableNames,
                     Namespace = opts.Namespace
                 };
             }

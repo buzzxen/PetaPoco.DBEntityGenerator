@@ -119,6 +119,9 @@
                         reader = new SqlServerSchemaReader();
                     }
 
+                    reader.CleanTableNames = context.Command.CleanTableNames;
+                    reader.SingularizeTableNames = context.Command.SingularizeTableNames;
+
                     reader.outer = _outer;
                     result = reader.ReadSchema(conn, _factory);
 

@@ -29,8 +29,8 @@
                     {
                         Table tbl = new Table();
                         tbl.Name = rdr["TABLE_NAME"].ToString();
-                        tbl.CleanName = CleanUp(tbl.Name);
-                        tbl.ClassName = Inflector.MakeSingular(tbl.CleanName);
+                        tbl.CleanName = CleanTableNames ? CleanUp(tbl.Name) : tbl.Name;
+                        tbl.ClassName = SingularizeTableNames ? Inflector.MakeSingular(tbl.CleanName) : tbl.CleanName;
                         tbl.Schema = null;
                         tbl.IsView = false;
                         result.Add(tbl);

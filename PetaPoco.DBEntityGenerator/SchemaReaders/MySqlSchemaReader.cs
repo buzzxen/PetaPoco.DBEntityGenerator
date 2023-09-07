@@ -26,8 +26,8 @@
                         tbl.Name = rdr["TABLE_NAME"].ToString();
                         tbl.Schema = rdr["TABLE_SCHEMA"].ToString();
                         tbl.IsView = string.Compare(rdr["TABLE_TYPE"].ToString(), "View", true) == 0;
-                        tbl.CleanName = CleanUp(tbl.Name);
-                        tbl.ClassName = Inflector.MakeSingular(tbl.CleanName);
+                        tbl.CleanName = CleanTableNames ? CleanUp(tbl.Name) : tbl.Name;
+                        tbl.ClassName = SingularizeTableNames ? Inflector.MakeSingular(tbl.CleanName) : tbl.CleanName;
                         result.Add(tbl);
                     }
                 }

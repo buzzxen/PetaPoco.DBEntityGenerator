@@ -1,7 +1,8 @@
 ﻿namespace PetaPoco.DBEntityGenerator
 {
     using System;
-    using System.Collections.Generic;
+    using CommandLine.Text;
+    using CommandLine;
 
     public class GenerateCommand
     {
@@ -14,6 +15,7 @@
         public string ClassPrefix { get; set; }
         public string ClassSuffix { get; set; }
 
+        
         public bool IncludeViews { get; set; }
 
         public string[] ExcludePrefix { get; set; }
@@ -22,6 +24,9 @@
 
         public bool ExplicitColumns { get; set; }
         public bool TrackModifiedColumns { get; set; }
+
+        public bool CleanTableNames { get; set; }
+        public bool SingularizeTableNames { get; set; }
 
         public AutoValueDictionary<string, GenerateTableCommand> Tables { get; set; }
 

@@ -4,6 +4,9 @@
 
     public abstract class SchemaReader
     {
+        public bool CleanTableNames { get; set; }
+        public bool SingularizeTableNames { get; set; }
+
         public abstract Tables ReadSchema(DbConnection connection, DbProviderFactory factory);
 
         public IOutput outer;

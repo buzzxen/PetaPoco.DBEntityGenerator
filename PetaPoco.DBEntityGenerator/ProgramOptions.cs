@@ -22,6 +22,12 @@ namespace PetaPoco.DBEntityGenerator
         [Option("trackModifiedColumns", Default = true, HelpText = "Track modified columns")]
         public bool TrackModifiedColumns { get; set; }
 
+        [Option("cleanTableNames", Default = true, HelpText = "Clean table names")]
+        public bool CleanTableName { get; set; }
+
+        [Option("singularizeTableNames", Default = true, HelpText = "Make table names singular")]
+        public bool SingularizeTableNames { get; set; }
+
         [Option('o', "output", Default = "console", HelpText = "Output, valid options are console, file")]
         public string Output { get; set; }
 
